@@ -1,6 +1,3 @@
-# News Feed API
-SpringBoot API with Webflux
-
 # Getting Started
 
 ### Reference Documentation
