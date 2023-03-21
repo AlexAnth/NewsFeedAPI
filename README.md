@@ -1,4 +1,4 @@
-# News Feed API
+# News Feed API 📢
 SpringBoot API with Webflux
 
 # Getting Started
