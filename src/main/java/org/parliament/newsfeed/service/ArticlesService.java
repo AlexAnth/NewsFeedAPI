@@ -1,23 +1,34 @@
 package org.parliament.newsfeed.service;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import org.mapstruct.factory.Mappers;
 import org.parliament.newsfeed.dto.ArticleDTO;
 import org.parliament.newsfeed.exception.ArticleNotFoundException;
 import org.parliament.newsfeed.mapping.GlobalMapper;
 import org.parliament.newsfeed.model.Article;
+import org.parliament.newsfeed.model.records.Author;
+import org.parliament.newsfeed.model.records.Category;
+import org.parliament.newsfeed.model.records.Publication;
 import org.parliament.newsfeed.repository.ArticlesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class ArticlesService {
 
     @Autowired
     private ArticlesRepository articlesRepository;
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 
     GlobalMapper globalMapper = Mappers.getMapper(GlobalMapper.class);
 
@@ -47,36 +58,32 @@ public class ArticlesService {
     }
 
     public Flux<Publication> getAllPublications() {
-        return articlesRepository.findAll()
-                .filter(article -> article.getPublication() != null)
-                .map(Article::getPublication)
+        return Flux.fromIterable(mongoTemplate
+                .findDistinct("publication", Article.class, String.class)
+                .stream()
+                .filter(Objects::nonNull)
                 .map(Publication::new)
-                .distinct();
+                .collect(Collectors.toList()));
+
     }
 
     public Flux<Category> getAllCategories() {
-        return articlesRepository.findAll()
-                .filter(article -> article.getCategory() != null)
-                .map(Article::getCategory)
+        return Flux.fromIterable(mongoTemplate
+                .findDistinct("category", Article.class, String.class)
+                .stream()
+                .filter(Objects::nonNull)
                 .map(Category::new)
-                .distinct();
+                .collect(Collectors.toList()));
     }
 
     public Flux<Author> getAllAuthors() {
-        return articlesRepository.findAll()
-                .filter(article -> article.getAuthor() != null)
-                .map(Article::getAuthor)
+        return Flux.fromIterable(mongoTemplate
+                .findDistinct("author", Article.class, String.class)
+                .stream()
+                .filter(Objects::nonNull)
                 .map(Author::new)
-                .distinct();
+                .collect(Collectors.toList()));
     }
 
-    public record Publication(@Schema(description = "The publication name", example = "ΤΕΥΧΟΣ_054") String name) {
-    }
-
-    public record Author(@Schema(description = "The author name", example = "ΓΙΑΝΝΗΣ ΦΩΤΟΥΛΑΣ") String name) {
-    }
-
-    public record Category(@Schema(description = "The category name", example = "ΡΕΠΟΡΤΑΖ") String name) {
-    }
 
 }
