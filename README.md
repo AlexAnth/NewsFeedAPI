@@ -1,4 +1,4 @@
-# News Feed API
+# News Feed API 📢
 SpringBoot API with Webflux
 
 # Getting Started
@@ -46,7 +46,7 @@ $ ./mvnw spring-boot:build-image -Pnative
 Then, you can run the app like any other container:
 
 ```
-$ docker run --rm storyteller:0.0.1-SNAPSHOT
+$ docker run --rm newsfeed:0.0.1-SNAPSHOT
 ```
 
 ### Executable with Native Build Tools
@@ -63,7 +63,7 @@ $ ./mvnw native:compile -Pnative
 
 Then, you can run the app as follows:
 ```
-$ target/storyteller
+$ target/newsfeed
 ```
 
 You can also run your existing tests suite in a native image.
