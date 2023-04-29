@@ -46,30 +46,6 @@ Follow the steps below to get started with newsfeed in Docker:
 
 The API is documented using Swagger UI. You can access the Swagger UI documentation at `http://localhost:8080/api-doc` after starting the NewsFeed API container.
 
-<html>
-<head>
-  <style>
-    /* Center the image */
-    .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    /* Round the corners of the image */
-    .rounded-image {
-      border-radius: 50%;
-    }
-  </style>
-</head>
-<body>
-  <div class="image-container">
-    <img src="https://github.com/AlexAnth/NewsFeedAPI/tree/main/docs/swagger.png" class="rounded-image" alt="Swagger API Documentation">
-  </div>
-</body>
-</html>
-
 ## API Endpoints
 
 The following are the main endpoints provided by NewsFeed API:
