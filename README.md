@@ -48,7 +48,7 @@ The API is documented using Swagger UI. You can access the Swagger UI documentat
 
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img src="https://raw.githubusercontent.com/AlexAnth/NewsFeedAPI/main/docs/swagger.png" style="border-radius: 1%;" alt="Swagger API Documentation">
+    <img src="https://raw.githubusercontent.com/AlexAnth/NewsFeedAPI/main/docs/swagger.png" style="border-radius: 3%;" alt="Swagger API Documentation">
 </div>
 
 
