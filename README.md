@@ -46,7 +46,6 @@ Follow the steps below to get started with newsfeed in Docker:
 
 The API is documented using Swagger UI. You can access the Swagger UI documentation at `http://localhost:8080/api-doc` after starting the NewsFeed API container.
 
-<!DOCTYPE html>
 <html>
 <head>
   <style>
