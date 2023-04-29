@@ -1,101 +1,105 @@
 # News Feed API 📢
-SpringBoot API with Webflux
 
-This is a fully reactive application that uses Spring WebFlux, that can be packaged as a GraalVM native image.
+#### <i> SpringBoot API with Webflux </i>
 
-## Features
+[![Build Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml/badge.svg)
+[![License](https://img.shields.io/badge/license-GNU%20General%20Public%20Licence-blue.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/LICENSE)
+[![Docker Image Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml/badge.svg)
 
-* Spring Boot 3
-* Fully reactive with Spring WebFlux and Spring WebClient
-* Native image with GraalVM
+---
+
+The NewsFeed API is a powerful RESTful API built using Spring Boot, Java 17, and Spring WebFlux. Leveraging the reactive programming model, this API provides a high-performance and non-blocking solution for storing and retrieving parliamentary articles in a MongoDB document database. This means that the API is capable of efficient handling of concurrent requests, allowing for optimal utilization of system resources.
+
+With this API, you can effortlessly distribute and manage articles content, with operations like create, read, update, and delete on information resources. Additionally, the API offers robust search functionality, enabling you to find articles based on various criteria, such as keywords, authors, or publication dates. With support for pagination, you can also navigate easily through the extensive collection of articles.
+
+## Prerequisites
+
+Before running the application, ensure that you have the following software installed:
+
+- Java Development Kit (JDK) 17
+- MongoDB
+- Maven (for building and running the application)
 
 ## Getting Started
 
-### Prerequisites
+Follow the steps below to get started with newsfeed in Docker:
 
-- Java 17
-- MongoDB
+1. Build the Docker image:
 
-### Installation
+   ```shell
+   docker build -t newsfeed:newsfeedAPI .
+   ```
 
-```bash
-./mvnw package
-```
+2. Run the NewsFeed API container:
 
-### Startup
+   ```shell
+   docker run --network=host newsfeed:newsfeedAPI
+   ```
 
-```bash
-./mvnw spring-boot:run
-```
+3. Verify that the containers are running:
 
-### Reference Documentation
-For further reference, please consider the following sections:
+   ```shell
+   docker ps
+   ```
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.0/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.0.0/maven-plugin/reference/html/#build-image)
-* [GraalVM Native Image Support](https://docs.spring.io/spring-boot/docs/3.0.0/reference/html/native-image.html#native-image)
-* [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/3.0.0/reference/htmlsingle/#web.reactive)
-* [Spring Security](https://docs.spring.io/spring-boot/docs/3.0.0/reference/htmlsingle/#web.security)
-* [Spring Data Reactive MongoDB](https://docs.spring.io/spring-boot/docs/3.0.0/reference/htmlsingle/#data.nosql.mongodb)
+## API Documentation
 
-### Guides
-The following guides illustrate how to use some features concretely:
+The API is documented using Swagger UI. You can access the Swagger UI documentation at `http://localhost:8080/api-doc` after starting the NewsFeed API container.
 
-* [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
-* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
-* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
-* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Center the image */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-### Additional Links
-These additional references should also help you:
+    /* Round the corners of the image */
+    .rounded-image {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="https://github.com/AlexAnth/NewsFeedAPI/tree/main/docs/swagger.png" class="rounded-image" alt="Swagger API Documentation">
+  </div>
+</body>
+</html>
 
-* [Configure AOT settings in Build Plugin](https://docs.spring.io/spring-boot/docs/3.0.0/maven-plugin/reference/htmlsingle/#aot)
 
-## GraalVM Native Support
+[//]: # (![Swagger API Documentation]&#40;docs/swagger.png&#41;)
 
-This project has been configured to let you generate either a lightweight container or a native executable.
-It is also possible to run your tests in a native image.
+## API Endpoints
 
-### Lightweight Container with Cloud Native Buildpacks
-If you're already familiar with Spring Boot container images support, this is the easiest way to get started.
-Docker should be installed and configured on your machine prior to creating the image.
+The following are the main endpoints provided by NewsFeed API:
 
-To create the image, run the following goal:
+- `GET /articles`: Retrieve a list of all articles.
+- `GET /articles/{id}`: Retrieve a specific article by its ID.
+- `POST /articles`: Create a new article.
+- `PUT /articles/{id}`: Update an existing article.
+- `DELETE /articles/{id}`: Delete an article.
+- `GET /articles/publications`: Retrieve a stream of all the publications available.
+- `GET /articles/publication/{id}`: Retrieve a stream of articles based on the publication identifier.
+- `GET /articles/categories`: Retrieve a stream of all the available article categories.
+- `GET /articles/authors`: Retrieve a stream of all the authors of available articles.
 
-```
-$ ./mvnw spring-boot:build-image -Pnative
-```
+For detailed information about each endpoint and their request/response formats, refer to the [API documentation](docs/api.md).
 
-Then, you can run the app like any other container:
+## Contributing
 
-```
-$ docker run --rm newsfeed:0.0.1-SNAPSHOT
-```
+Contributions to the Parliament Magazine API are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-### Executable with Native Build Tools
-Use this option if you want to explore more options such as running your tests in a native image.
-The GraalVM `native-image` compiler should be installed and configured on your machine.
+Before contributing, please read our [contribution guidelines](docs/CONTRIBUTING.md).
 
-NOTE: GraalVM 22.3+ is required.
+## License
 
-To create the executable, run the following goal:
+This project is licensed under the [General Public License](docs/LICENSE).
 
-```
-$ ./mvnw native:compile -Pnative
-```
+## Contact
 
-Then, you can run the app as follows:
-```
-$ target/newsfeed
-```
-
-You can also run your existing tests suite in a native image.
-This is an efficient way to validate the compatibility of your application.
-
-To run your existing tests in a native image, run the following goal:
-
-```
-$ ./mvnw test -PnativeTest
-```
+For any questions or inquiries, please contact [anthiswebdev@gmail.com](mailto:anthiswebdev@gmail.com).
