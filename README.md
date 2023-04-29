@@ -71,9 +71,6 @@ The API is documented using Swagger UI. You can access the Swagger UI documentat
 </body>
 </html>
 
-
-[//]: # (![Swagger API Documentation]&#40;docs/swagger.png&#41;)
-
 ## API Endpoints
 
 The following are the main endpoints provided by NewsFeed API:
