@@ -81,4 +81,4 @@ This project is licensed under the [General Public License](docs/LICENSE).
 
 ## Contact
 
-For any questions or inquiries, please contact [anthiswebdev@gmail.com](mailto:anthiswebdev@gmail.com).
+For any questions or inquiries, please contact [anthiswebdev@gmail.com](mailto:anthiswebdev@gmail.com). 
