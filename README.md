@@ -2,9 +2,9 @@
 
 #### <i> SpringBoot API with Webflux </i>
 
-[![Build Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml/badge.svg)
-[![License](https://img.shields.io/badge/license-GNU%20General%20Public%20Licence-blue.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/LICENSE)
-[![Docker Image Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml/badge.svg)
+[![Build Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/maven.yml)
+[![License](https://img.shields.io/badge/license-GNU%20General%20Public%20Licence-blue.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/blob/main/docs/LICENSE)
+[![Docker Image Status](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml/badge.svg?style=flat-square)](https://github.com/AlexAnth/NewsFeedAPI/actions/workflows/docker-image.yml)
 
 ---
 
@@ -81,4 +81,4 @@ This project is licensed under the [General Public License](docs/LICENSE).
 
 ## Contact
 
-For any questions or inquiries, please contact [anthiswebdev@gmail.com](mailto:anthiswebdev@gmail.com).
+For any questions or inquiries, please contact [anthiswebdev@gmail.com](mailto:anthiswebdev@gmail.com). 
