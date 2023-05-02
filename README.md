@@ -71,7 +71,7 @@ For detailed information about each endpoint and their request/response formats,
 
 ## Contributing
 
-Contributions to the Parliament Magazine API are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+Contributions to the Newsfeed API are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
 Before contributing, please read our [contribution guidelines](docs/CONTRIBUTING.md).
 
