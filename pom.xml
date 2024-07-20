@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.hellenic.parliament</groupId>
 	<artifactId>newsfeed</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>NewsFeed</name>
 	<description>API for Hellenic Parliament News Feed</description>
 	<properties>
